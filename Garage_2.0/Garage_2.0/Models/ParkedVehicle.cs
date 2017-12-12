@@ -12,7 +12,7 @@ namespace Garage_2._0.Models
         public int Id { get; set; }
         public Type Type { get; set; }
         [Required]
-        [DisplayName("Reg No.")]
+        [DisplayName("Registration_number")]
         public string Registration_number { get; set; }
         [Required]
         [DisplayName("Color")]

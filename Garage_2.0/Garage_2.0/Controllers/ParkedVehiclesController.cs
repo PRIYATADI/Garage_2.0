@@ -10,28 +10,43 @@ using Garage_2._0.DataAccessLayer;
 using Garage_2._0.Models;
 using Garage_2._0.Models.ViewModel;
 
+
 namespace Garage_2._0.Controllers
 {
     public class ParkedVehiclesController : Controller
     {
         private GarageContext db = new GarageContext();
 
-        // GET: ParkedVehicles
+
         public ActionResult Index()
         {
+            //List<OverView_View> model = new List<OverView_View>();
+            //foreach (var vehicle in db.ParkedVehicles)
+            //{
+            //    model.Add(new OverView_View(vehicle));
+            //}
+           
+           
+
+
+            //return View(model.ToList());
+
+
             return View(db.ParkedVehicles.ToList());
         }
 
 
+
+
         public ActionResult OverView_view()
         {
-            List<OverView_View> model = new List<OverView_View>();
+            List<OverView_View> ParkedVehicle = new List<OverView_View>();
             foreach (var vehicle in db.ParkedVehicles)
             {
-                model.Add(new OverView_View(vehicle));
+                ParkedVehicle.Add(new OverView_View(vehicle));
             }
-
-            return View(model);
+           
+            return View(ParkedVehicle);
         }
 
         // GET: ParkedVehicles/Details/5
